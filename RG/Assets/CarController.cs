@@ -15,6 +15,9 @@ public class CarController : MonoBehaviour
 
     public float gasInput;
     public float steeringInput;
+
+    public float motorPower;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +29,7 @@ public class CarController : MonoBehaviour
     {
         CheckInput();
         ApplyWheelPositions();
+        ApplyMotor();
     }
     void ApplyWheelPositions()
     {
@@ -33,11 +37,6 @@ public class CarController : MonoBehaviour
         UpdateWheel(FLwheel, FLwheelMesh);
         UpdateWheel(BRwheel, BRwheelMesh);
         UpdateWheel(BLwheel, BLwheelMesh);
-    }
-    void CheckInput()
-    {
-        gasInput = Input.GetAxis("Vertical");
-        steeringInput = Input.GetAxis("Horizontal");
     }
     void UpdateWheel(WheelCollider collider, MeshRenderer renderer)
     {
@@ -47,5 +46,15 @@ public class CarController : MonoBehaviour
         renderer.transform.position = position;
         renderer.transform.rotation = quat;
 
+    }
+    void CheckInput()
+    {
+        gasInput = Input.GetAxis("Vertical");
+        steeringInput = Input.GetAxis("Horizontal");
+    }
+    void ApplyMotor()
+    {
+        BRwheel.motorTorque = motorPower * gasInput;
+        BLwheel.motorTorque = motorPower * gasInput;
     }
 }
