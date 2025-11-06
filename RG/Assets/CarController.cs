@@ -42,6 +42,10 @@ public class CarController : MonoBehaviour
         ApplyMotor();
         ApplySteering();
         ApplyBreak();
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TurnCar();
+        }
     }
     void ApplyBreak()
     {
@@ -112,6 +116,20 @@ public class CarController : MonoBehaviour
     {
         var gas = Mathf.Clamp(gasInput, 0.5f, 1f);
         return speed * gas/ maxSpeed;
+    }
+    public void TurnCar()
+    {
+        Vector3 position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
+        Vector3 rotation = new Vector3(0f, transform.eulerAngles.y, 0f); // zachowuje kierunek jazdy
+
+        float tiltZ = transform.eulerAngles.z;
+        if (tiltZ > 180f) tiltZ -= 360f; // teraz np. 350 stanie siê -10
+
+        if (Mathf.Abs(tiltZ) > 45f) // jeœli auto przechylone o wiêcej ni¿ 45°
+        {
+            transform.position = position;
+            transform.rotation = Quaternion.Euler(rotation);
+        }
     }
 }
 
