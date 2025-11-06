@@ -21,6 +21,7 @@ public class CarController : MonoBehaviour
     public float brakepower;
     private float slipAngle;
     public float brakeInput;
+    public float maxSpeed;
 
     public float motorPower;
     float speed;
@@ -35,7 +36,7 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = playerRB.linearVelocity.magnitude;
+        speed = BLwheel.rpm*BLwheel.radius*2f*Mathf.PI /10;
         CheckInput();
         ApplyWheelPositions();
         ApplyMotor();
@@ -95,8 +96,22 @@ public class CarController : MonoBehaviour
     }
     void ApplyMotor()
     {
-        BRwheel.motorTorque = motorPower * gasInput;
-        BLwheel.motorTorque = motorPower * gasInput;
+        if (speed<maxSpeed)
+        {
+            BRwheel.motorTorque = motorPower * gasInput;
+            BLwheel.motorTorque = motorPower * gasInput;
+        }
+        else
+        {
+            BRwheel.motorTorque = 0;
+            BLwheel.motorTorque = 0;
+        }
+
+    }
+    public float GetSpeedRatio()
+    {
+        var gas = Mathf.Clamp(gasInput, 0.5f, 1f);
+        return speed * gas/ maxSpeed;
     }
 }
 
