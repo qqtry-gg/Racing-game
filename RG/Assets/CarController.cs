@@ -25,6 +25,7 @@ public class CarController : MonoBehaviour
 
     public float motorPower;
     float speed;
+    private float speedClamped;
     public AnimationCurve steeringCurve;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +38,7 @@ public class CarController : MonoBehaviour
     void Update()
     {
         speed = BLwheel.rpm*BLwheel.radius*2f*Mathf.PI /10;
+        speedClamped = Mathf.Lerp(speedClamped, speed, Time.deltaTime);
         CheckInput();
         ApplyWheelPositions();
         ApplyMotor();
@@ -115,7 +117,7 @@ public class CarController : MonoBehaviour
     public float GetSpeedRatio()
     {
         var gas = Mathf.Clamp(gasInput, 0.5f, 1f);
-        return speed * gas/ maxSpeed;
+        return speedClamped * gas/ maxSpeed;
     }
     public void TurnCar()
     {

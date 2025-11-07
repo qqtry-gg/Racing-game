@@ -7,7 +7,6 @@ public class EngineAudio : MonoBehaviour
     public float runningMaxPitch;
     public AudioSource idleSound;
     public float idleMaxVolume;
-    public float idleMaxPitch;
 
     float speedRatio;
 
@@ -26,5 +25,9 @@ public class EngineAudio : MonoBehaviour
             speedRatio = carController.GetSpeedRatio();
         }
         idleSound.volume = Mathf.Lerp(0.1f, idleMaxVolume, speedRatio);
+
+        runningSound.volume = Mathf.Lerp(0.3f, runningMaxVolume, speedRatio);
+
+        runningSound.pitch = Mathf.Lerp(runningSound.pitch, Mathf.Lerp(0.3f, runningMaxPitch, speedRatio), Time.deltaTime);
     }
 }
