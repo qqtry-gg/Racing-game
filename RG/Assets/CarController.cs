@@ -102,7 +102,7 @@ public class CarController : MonoBehaviour
     }
     void ApplyMotor()
     {
-        if (speed<maxSpeed)
+        if (Mathf.Abs(speed)<maxSpeed)
         {
             BRwheel.motorTorque = motorPower * gasInput;
             BLwheel.motorTorque = motorPower * gasInput;
@@ -116,7 +116,7 @@ public class CarController : MonoBehaviour
     }
     public float GetSpeedRatio()
     {
-        var gas = Mathf.Clamp(gasInput, 0.5f, 1f);
+        var gas = Mathf.Clamp(Mathf.Abs(gasInput), 0.5f, 1f);
         return speedClamped * gas/ maxSpeed;
     }
     public void TurnCar()
