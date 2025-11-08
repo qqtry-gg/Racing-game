@@ -267,7 +267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &20385034141536211
 Transform:
   m_ObjectHideFlags: 0
@@ -422,16 +422,16 @@ MonoBehaviour:
   BLwheelMesh: {fileID: 400414378487165451}
   gasInput: 0
   steeringInput: 0
-  brakepower: 75000
+  brakepower: 1000000
   brakeInput: 0
-  maxSpeed: 1250
-  motorPower: 1250
+  maxSpeed: 200
+  motorPower: 2000
   steeringCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.41455823
-      value: 80.98203
+      time: 1.7501168
+      value: 70.30748
       inSlope: -0.29871878
       outSlope: -0.29871878
       tangentMode: 0
@@ -439,13 +439,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.50416666
     - serializedVersion: 3
-      time: 120.869286
-      value: 31.18923
-      inSlope: -1.01009
-      outSlope: -1.01009
+      time: 198.4948
+      value: 50.006916
+      inSlope: -0.12995201
+      outSlope: -0.12995201
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.06276169
+      inWeight: 0.17796612
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -594,7 +594,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3210515104880433319}
-  m_Mesh: {fileID: -1616609067156036257, guid: 479bd64bd0eb14d47a9189dab8f05695, type: 3}
+  m_Mesh: {fileID: 1997357183415878058, guid: 41c288592429ad74ea436c2cc1011e3c, type: 3}
 --- !u!23 &4600069739193035152
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -683,7 +683,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4922557203078635859}
-  m_Mesh: {fileID: 3553293235138512193, guid: 479bd64bd0eb14d47a9189dab8f05695, type: 3}
+  m_Mesh: {fileID: -5565371402387768766, guid: 41c288592429ad74ea436c2cc1011e3c, type: 3}
 --- !u!23 &400414378487165451
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -772,7 +772,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5428246394833923508}
-  m_Mesh: {fileID: -1818853985203611492, guid: 479bd64bd0eb14d47a9189dab8f05695, type: 3}
+  m_Mesh: {fileID: -8802174891361603613, guid: 41c288592429ad74ea436c2cc1011e3c, type: 3}
 --- !u!23 &6500059388046122340
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1199,7 +1199,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8186783879789201615}
-  m_Mesh: {fileID: 7398261718193623422, guid: 479bd64bd0eb14d47a9189dab8f05695, type: 3}
+  m_Mesh: {fileID: 2734298432399092820, guid: 41c288592429ad74ea436c2cc1011e3c, type: 3}
 --- !u!23 &8529420732030203127
 MeshRenderer:
   m_ObjectHideFlags: 0
