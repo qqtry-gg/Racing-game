@@ -16,13 +16,6 @@ public class Race1ScriptStart : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Car"))
-        {
-            timer += Time.deltaTime;
-        }
-    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Car"))
@@ -30,9 +23,12 @@ public class Race1ScriptStart : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 10)
             {
+                Rigidbody rb = other.GetComponent<Rigidbody>();
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
                 other.gameObject.transform.position = CordsToTeleport;
+                other.gameObject.transform.rotation = Quaternion.Euler(0,0,0);
                 timer = 0;
-                Debug.Log("Car stays in the area");
             }
         }
     }
@@ -40,7 +36,7 @@ public class Race1ScriptStart : MonoBehaviour
     {
         if (other.CompareTag("Car"))
         {
-            Debug.Log("Car Leaves the are");
+            
             timer = 0;
         }
     }
