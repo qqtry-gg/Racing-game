@@ -28,6 +28,8 @@ public class Race1ScriptStart : MonoBehaviour
                 rb.angularVelocity = Vector3.zero;
                 other.gameObject.transform.position = CordsToTeleport;
                 other.gameObject.transform.rotation = Quaternion.Euler(0,0,0);
+                rb.angularVelocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
                 timer = 0;
             }
         }

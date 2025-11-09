@@ -35,4 +35,8 @@ public class RaceStartingScript : MonoBehaviour
             }
         }
     }
+    public void CanStartRace()
+    {
+        CanRun = true;
+    }
 }

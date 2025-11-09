@@ -8,7 +8,6 @@ public class AIscript : MonoBehaviour
     NavMeshAgent agent;
 
     private int currentIndex = 0;
-    private float waitTimer;
 
     private bool CanRace = false;
 
