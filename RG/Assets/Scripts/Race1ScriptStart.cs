@@ -39,7 +39,7 @@ public class Race1ScriptStart : MonoBehaviour
     {
         if (other.CompareTag("Car"))
         {
-            
+           
             timer = 0;
         }
     }

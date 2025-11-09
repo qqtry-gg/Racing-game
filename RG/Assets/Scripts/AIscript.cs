@@ -28,7 +28,7 @@ public class AIscript : MonoBehaviour
     {
         if (CanRace == true)
         {
-            if (currentIndex <= WayPoints.Length)
+            if (currentIndex < WayPoints.Length - 1)
             {
                 if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
                 {
