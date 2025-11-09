@@ -30,7 +30,7 @@ public class AIscript : MonoBehaviour
         {
             if (currentIndex <= WayPoints.Length)
             {
-                if (agent.remainingDistance <= agent.stoppingDistance)
+                if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
                 {
                     currentIndex = (currentIndex + 1);
                     agent.SetDestination(WayPoints[currentIndex].position);

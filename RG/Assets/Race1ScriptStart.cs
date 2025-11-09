@@ -5,6 +5,7 @@ public class Race1ScriptStart : MonoBehaviour
 {
     private float timer;
     public Vector3 CordsToTeleport;
+    public Vector3 RotationToTeleport;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,7 +28,7 @@ public class Race1ScriptStart : MonoBehaviour
                 rb.linearVelocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
                 other.gameObject.transform.position = CordsToTeleport;
-                other.gameObject.transform.rotation = Quaternion.Euler(0,0,0);
+                other.gameObject.transform.rotation = Quaternion.Euler(RotationToTeleport);
                 rb.angularVelocity = Vector3.zero;
                 rb.linearVelocity = Vector3.zero;
                 timer = 0;

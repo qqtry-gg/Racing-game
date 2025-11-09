@@ -7,6 +7,7 @@ public class winScript : MonoBehaviour
     [SerializeField] GameObject Player;
     bool hasPlayerAlreadywon = false;
     [SerializeField]RaceStartingScript raceStartingScript;
+    public int cashAfterWinning;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,7 +37,7 @@ public class winScript : MonoBehaviour
 
             Debug.Log("You win"); //to do logic of winning(animations, things like that)
             Player = GameObject.FindGameObjectWithTag("Car");
-            gameManagerScript.EarningCoins(50);
+            gameManagerScript.EarningCoins(cashAfterWinning);
             Player.transform.position = positionToTeleport;
             hasPlayerAlreadywon = true;
             raceStartingScript.CanStartRace();
