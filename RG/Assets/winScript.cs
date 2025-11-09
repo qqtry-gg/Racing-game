@@ -6,7 +6,7 @@ public class winScript : MonoBehaviour
     [SerializeField] Vector3 positionToTeleport;
     [SerializeField] GameObject Player;
     bool hasPlayerAlreadywon = false;
-    RaceStartingScript raceStartingScript;
+    [SerializeField]RaceStartingScript raceStartingScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

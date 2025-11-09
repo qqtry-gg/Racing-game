@@ -46,5 +46,6 @@ public class AIscript : MonoBehaviour
     public void StartRacing()
     {
         CanRace = true;
+        currentIndex = 0;
     }
 }
