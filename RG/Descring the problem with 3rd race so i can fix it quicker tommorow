@@ -1,0 +1,8 @@
+the race itself works, the problem is with the bool that should turn true when ai, or the player crosses the finishing line. with other races it worked perfectly fine, but with this idk it doesn't work.
+I should check the script, I think that the problem may have appeared beacouse:
+1) there's something bugged with the way the waypoints work (the most possible scenario)
+2) the ai/ or the script dosen't somehow collide with the winning area(shouldn't be possible couse both the ai and winning area have collider, and ai has rigidbody but who knows)
+3) problem may also accure in the later phase of the script when the information is sent to the other script (possible but if it was true then it would be better to start building this race all over again than fixing it)
+Solutions:
+Wrting the script all over again (hard, but the best way considering all of the sphagetti code i made lol)
+making the race all over again (I will probably choose this one couse I am lazy, and I don't want to write all of that, all over again)
