@@ -24,19 +24,38 @@ public class ShopScript : MonoBehaviour
             if (currentCarLook < Cars.Count - 1)
             {
                 currentCarLook += 1;
+                MainCamera.transform.position = MainCamera.transform.position + new Vector3(9.25f, 0f, 0f);
                 MainCamera.transform.LookAt(Cars[currentCarLook]);
             }
             else
             {
                 currentCarLook = 0;
+                MainCamera.transform.position = new Vector3(507, 2.5f, 693.5f);
                 MainCamera.transform.LookAt(Cars[currentCarLook]);
             }
+        }
+        else if (Input.GetKeyUp(KeyCode.Q) && isInShop)
+        {
+            if (currentCarLook > 0)
+            {
+                currentCarLook -= 1;
+                MainCamera.transform.position = MainCamera.transform.position + new Vector3(-9.25f, 0f, 0f);
+                MainCamera.transform.LookAt(Cars[currentCarLook]);
+            }
+            else if (currentCarLook == 0)
+            {
+                currentCarLook = Cars.Count - 1;
+                MainCamera.transform.position = MainCamera.transform.position + new Vector3(9.25f * Cars.Count - 1, 0f, 0f);
+                MainCamera.transform.LookAt(Cars[currentCarLook]);
+            }
+            
         }
     }
     public void EnteredShop()
     {
         cameraController.EnterShop();
         MainCamera.transform.LookAt(Cars[0]);
+        MainCamera.transform.position = new Vector3(507, 2.5f, 693.5f);
         isInShop = true;
     }
     public void ExitedShop()

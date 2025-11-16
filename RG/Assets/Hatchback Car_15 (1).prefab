@@ -258,16 +258,13 @@ GameObject:
   - component: {fileID: 4028390160020439158}
   - component: {fileID: 1153837158124123324}
   - component: {fileID: 8190380500954381041}
-  - component: {fileID: 6170169636006393739}
-  - component: {fileID: 6125818370768914323}
-  - component: {fileID: 3533934927525899039}
   m_Layer: 0
-  m_Name: Hatchback Car_15
-  m_TagString: Car
+  m_Name: Hatchback Car_15 (1)
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &20385034141536211
 Transform:
   m_ObjectHideFlags: 0
@@ -277,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 793685457875359081}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 324.59454, y: 6.9950523, z: 364.55032}
+  m_LocalPosition: {x: 516.7533, y: 0.5, z: 694.82935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -373,107 +370,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0153255, y: 0.79630804, z: 4.4259872}
   m_Center: {x: -0.0000014305115, y: 1.1961634, z: 0.06991863}
---- !u!54 &6170169636006393739
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793685457875359081}
-  serializedVersion: 5
-  m_Mass: 1000
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &6125818370768914323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793685457875359081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4a6a7af675cbb4bb03673148c70434, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  FRwheel: {fileID: 7010330193301511484}
-  FLwheel: {fileID: 2493323267880711232}
-  BRwheel: {fileID: 6364927568163432857}
-  BLwheel: {fileID: 1197623031486476656}
-  FRwheelMesh: {fileID: 4600069739193035152}
-  FLwheelMesh: {fileID: 8529420732030203127}
-  BRwheelMesh: {fileID: 6500059388046122340}
-  BLwheelMesh: {fileID: 400414378487165451}
-  gasInput: 0
-  steeringInput: 0
-  brakepower: 50000
-  brakeInput: 0
-  maxSpeed: 50
-  motorPower: 500
-  steeringCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -0.25276184
-      value: 62.54925
-      inSlope: -0.29871878
-      outSlope: -0.29871878
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.50416666
-    - serializedVersion: 3
-      time: 79.825645
-      value: 20.2445
-      inSlope: -1.01009
-      outSlope: -1.01009
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.06276169
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &3533934927525899039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793685457875359081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2cff1275bb43a41971c3ad1e2a33ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  runningSound: {fileID: 4070521011498675898}
-  runningMaxVolume: 1
-  runningMaxPitch: 2
-  idleSound: {fileID: 8379750189054959524}
-  idleMaxVolume: 1
-  revLimiter: 0
-  LimiterSound: 1
-  LimiterFrequency: 3
-  LimiterEngage: 0.8
-  ReverseSound: {fileID: 6862392927191264933}
-  ReverseMaxVolume: 0.2
-  ReverseMaxPitch: 1
 --- !u!1 &905658279031276070
 GameObject:
   m_ObjectHideFlags: 0
