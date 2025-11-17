@@ -73,6 +73,8 @@ public class ShopScript : MonoBehaviour
         cameraController.EnterShop();
         MainCamera.transform.LookAt(Cars[0]);
         MainCamera.transform.position = new Vector3(507, 2.5f, 693.5f);
+        CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
+        SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
         isInShop = true;
     }
     public void ExitedShop()
@@ -129,10 +131,10 @@ public class ShopScript : MonoBehaviour
     public void SetCarDetails(string CarName, float CarPrice, float MaxSpeed, float MotorPower, float BreakingPower, string SteeringDifficulty)
     {
         CarName1.text = CarName;
-        CarPrice1.text = CarPrice.ToString();
-        MaxSpeed1.text = MaxSpeed.ToString();
-        MotorPower1.text = MotorPower.ToString();
-        BreakingPower1.text = BreakingPower.ToString();
-        SteeringDifficulty1.text = SteeringDifficulty;
+        CarPrice1.text = "Price: " + CarPrice.ToString() + "$";
+        MaxSpeed1.text = "Max Speed: " +  MaxSpeed.ToString();
+        MotorPower1.text = "Motor Power: " + MotorPower.ToString();
+        BreakingPower1.text = "Break Power: " + BreakingPower.ToString();
+        SteeringDifficulty1.text = "Steering Difficulty: " + SteeringDifficulty;
     }
 }
