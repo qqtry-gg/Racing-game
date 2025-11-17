@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 4028390160020439158}
   - component: {fileID: 1153837158124123324}
   - component: {fileID: 8190380500954381041}
+  - component: {fileID: 8967189968848914795}
   m_Layer: 0
   m_Name: Hatchback Car_15 (1)
   m_TagString: Untagged
@@ -370,6 +371,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0153255, y: 0.79630804, z: 4.4259872}
   m_Center: {x: -0.0000014305115, y: 1.1961634, z: 0.06991863}
+--- !u!114 &8967189968848914795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793685457875359081}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4a6a7af675cbb4bb03673148c70434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarController
+  price: 0
+  SteeringDifficulty: Medium
+  FRwheel: {fileID: 0}
+  FLwheel: {fileID: 0}
+  BRwheel: {fileID: 0}
+  BLwheel: {fileID: 0}
+  FRwheelMesh: {fileID: 0}
+  FLwheelMesh: {fileID: 0}
+  BRwheelMesh: {fileID: 0}
+  BLwheelMesh: {fileID: 0}
+  gasInput: 0
+  steeringInput: 0
+  brakepower: 50000
+  brakeInput: 0
+  maxSpeed: 50
+  motorPower: 500
+  steeringCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &905658279031276070
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +415,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8892184988024313082}
   - component: {fileID: 4614533004641413956}
-  - component: {fileID: 7010330193301511484}
   m_Layer: 0
   m_Name: FR wheel Collider
   m_TagString: Untagged
@@ -411,45 +445,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905658279031276070}
   m_Mesh: {fileID: -1616609067156036257, guid: 479bd64bd0eb14d47a9189dab8f05695, type: 3}
---- !u!146 &7010330193301511484
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905658279031276070}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.45
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 0.2
-    m_AsymptoteSlip: 0.3
-    m_AsymptoteValue: 0.4
-    m_Stiffness: 2
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0
 --- !u!1 &3210515104880433319
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +980,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7272050409963358836}
   - component: {fileID: 8189278286922381645}
-  - component: {fileID: 2493323267880711232}
   m_Layer: 0
   m_Name: FL wheel Collider
   m_TagString: Untagged
@@ -1016,45 +1010,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7184942668414072847}
   m_Mesh: {fileID: 7398261718193623422, guid: 479bd64bd0eb14d47a9189dab8f05695, type: 3}
---- !u!146 &2493323267880711232
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7184942668414072847}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.45
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 0.2
-    m_AsymptoteSlip: 0.3
-    m_AsymptoteValue: 0.4
-    m_Stiffness: 2
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0
 --- !u!1 &8186783879789201615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,7 +1109,6 @@ GameObject:
   m_Component:
   - component: {fileID: 491355779359628449}
   - component: {fileID: 891094948116776605}
-  - component: {fileID: 6364927568163432857}
   m_Layer: 0
   m_Name: BR wheel Collider
   m_TagString: Untagged
@@ -1185,45 +1139,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8837530758774521370}
   m_Mesh: {fileID: -1818853985203611492, guid: 479bd64bd0eb14d47a9189dab8f05695, type: 3}
---- !u!146 &6364927568163432857
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8837530758774521370}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.45
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0
 --- !u!1 &9189954456715478326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1149,6 @@ GameObject:
   m_Component:
   - component: {fileID: 143519436905725785}
   - component: {fileID: 7650142423445446278}
-  - component: {fileID: 1197623031486476656}
   m_Layer: 0
   m_Name: BL wheel Collider
   m_TagString: Untagged
@@ -1265,42 +1179,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9189954456715478326}
   m_Mesh: {fileID: 3553293235138512193, guid: 479bd64bd0eb14d47a9189dab8f05695, type: 3}
---- !u!146 &1197623031486476656
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9189954456715478326}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.45
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0

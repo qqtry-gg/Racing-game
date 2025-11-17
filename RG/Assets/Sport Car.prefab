@@ -412,6 +412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4a6a7af675cbb4bb03673148c70434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  price: 3000
+  SteeringDifficulty: Medium
   FRwheel: {fileID: 7010330193301511484}
   FLwheel: {fileID: 2493323267880711232}
   BRwheel: {fileID: 6364927568163432857}

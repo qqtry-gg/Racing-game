@@ -5,8 +5,17 @@ using UnityEngine;
 
 public class ShopScript : MonoBehaviour
 {
+    CarController CurrentCarDetails;
     [SerializeField] CameraController cameraController;
     [SerializeField] Camera MainCamera;
+    [SerializeField] GameObject ShopUI;
+    [Header("CarDetailsForGUI")]
+    [SerializeField] TMPro.TextMeshProUGUI CarName1;
+    [SerializeField] TMPro.TextMeshProUGUI CarPrice1;
+    [SerializeField] TMPro.TextMeshProUGUI MaxSpeed1;
+    [SerializeField] TMPro.TextMeshProUGUI MotorPower1;
+    [SerializeField] TMPro.TextMeshProUGUI BreakingPower1;
+    [SerializeField] TMPro.TextMeshProUGUI SteeringDifficulty1;
     public List<Transform> Cars = new List<Transform>();
     int currentCarLook = 0;
     bool isInShop = false;
@@ -26,12 +35,16 @@ public class ShopScript : MonoBehaviour
                 currentCarLook += 1;
                 MainCamera.transform.position = MainCamera.transform.position + new Vector3(9.25f, 0f, 0f);
                 MainCamera.transform.LookAt(Cars[currentCarLook]);
+                CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
+                SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
             }
             else
             {
                 currentCarLook = 0;
                 MainCamera.transform.position = new Vector3(507, 2.5f, 693.5f);
                 MainCamera.transform.LookAt(Cars[currentCarLook]);
+                CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
+                SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
             }
         }
         else if (Input.GetKeyUp(KeyCode.Q) && isInShop)
@@ -41,12 +54,16 @@ public class ShopScript : MonoBehaviour
                 currentCarLook -= 1;
                 MainCamera.transform.position = MainCamera.transform.position + new Vector3(-9.25f, 0f, 0f);
                 MainCamera.transform.LookAt(Cars[currentCarLook]);
+                CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
+                SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
             }
             else if (currentCarLook == 0)
             {
                 currentCarLook = Cars.Count - 1;
                 MainCamera.transform.position = MainCamera.transform.position + new Vector3(9.25f * Cars.Count - 1, 0f, 0f);
                 MainCamera.transform.LookAt(Cars[currentCarLook]);
+                CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
+                SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
             }
             
         }
@@ -61,6 +78,61 @@ public class ShopScript : MonoBehaviour
     public void ExitedShop()
     {
         cameraController.ExitShop();
+        ShopUI.SetActive(false);
         isInShop = false;
+    }
+    public void GoLeft()
+    {
+        if (isInShop)
+        {
+            if (currentCarLook > 0)
+            {
+                currentCarLook -= 1;
+                MainCamera.transform.position = MainCamera.transform.position + new Vector3(-9.25f, 0f, 0f);
+                MainCamera.transform.LookAt(Cars[currentCarLook]);
+                CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
+                SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
+            }
+            else if (currentCarLook == 0)
+            {
+                currentCarLook = Cars.Count - 1;
+                MainCamera.transform.position = MainCamera.transform.position + new Vector3(9.25f * Cars.Count - 1, 0f, 0f);
+                MainCamera.transform.LookAt(Cars[currentCarLook]);
+                CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
+                SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
+            }
+
+        }
+    }
+    public void GoRight()
+    {
+        if (isInShop)
+        {
+            if (currentCarLook < Cars.Count - 1)
+            {
+                currentCarLook += 1;
+                MainCamera.transform.position = MainCamera.transform.position + new Vector3(9.25f, 0f, 0f);
+                MainCamera.transform.LookAt(Cars[currentCarLook]);
+                CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
+                SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
+            }
+            else
+            {
+                currentCarLook = 0;
+                MainCamera.transform.position = new Vector3(507, 2.5f, 693.5f);
+                MainCamera.transform.LookAt(Cars[currentCarLook]);
+                CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
+                SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
+            }
+        }
+    }
+    public void SetCarDetails(string CarName, float CarPrice, float MaxSpeed, float MotorPower, float BreakingPower, string SteeringDifficulty)
+    {
+        CarName1.text = CarName;
+        CarPrice1.text = CarPrice.ToString();
+        MaxSpeed1.text = MaxSpeed.ToString();
+        MotorPower1.text = MotorPower.ToString();
+        BreakingPower1.text = BreakingPower.ToString();
+        SteeringDifficulty1.text = SteeringDifficulty;
     }
 }

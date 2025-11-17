@@ -267,7 +267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &20385034141536211
 Transform:
   m_ObjectHideFlags: 0
@@ -412,6 +412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4a6a7af675cbb4bb03673148c70434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  price: 250
+  SteeringDifficulty: Easy
   FRwheel: {fileID: 7010330193301511484}
   FLwheel: {fileID: 2493323267880711232}
   BRwheel: {fileID: 6364927568163432857}

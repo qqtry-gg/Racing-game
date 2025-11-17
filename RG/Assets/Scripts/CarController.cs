@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 
 public class CarController : MonoBehaviour
 {
+    [Header("ForShop")]
+    public int price;
+    public string SteeringDifficulty;
+
 
     private Rigidbody playerRB;
 
