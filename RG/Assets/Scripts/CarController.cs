@@ -7,6 +7,7 @@ public class CarController : MonoBehaviour
     [Header("ForShop")]
     public int price;
     public string SteeringDifficulty;
+    public bool HasTheCarPurchased = false;
 
 
     private Rigidbody playerRB;

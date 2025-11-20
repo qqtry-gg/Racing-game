@@ -414,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   price: 0
   SteeringDifficulty: Medium
+  HasTheCarPurchased: 1
   FRwheel: {fileID: 7010330193301511484}
   FLwheel: {fileID: 2493323267880711232}
   BRwheel: {fileID: 6364927568163432857}

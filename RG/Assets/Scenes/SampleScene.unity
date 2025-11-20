@@ -2713,7 +2713,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 435936074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 749672571}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: BuyCar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &435936074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3837,7 +3849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cba127c6b6504e4fa74f5325ee9bf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Cash: 0
+  Cash: 10000
   CoinsCounter: {fileID: 1568898406}
 --- !u!4 &749672570
 Transform:
@@ -3866,6 +3878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1c377d85ce9fe429d58127265cfef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  gameManagerScript: {fileID: 0}
   cameraController: {fileID: 330585548}
   MainCamera: {fileID: 330585545}
   ShopUI: {fileID: 1379186350}
@@ -3875,6 +3888,7 @@ MonoBehaviour:
   MotorPower1: {fileID: 2138896456}
   BreakingPower1: {fileID: 621672993}
   SteeringDifficulty1: {fileID: 1005211647}
+  PurchaseButton: {fileID: 1983542672}
   Cars:
   - {fileID: 1693826127}
   - {fileID: 1206630436}

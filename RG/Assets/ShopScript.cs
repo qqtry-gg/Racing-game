@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ShopScript : MonoBehaviour
 {
+    [SerializeField] GameManagerScript gameManagerScript;
     CarController CurrentCarDetails;
     [SerializeField] CameraController cameraController;
     [SerializeField] Camera MainCamera;
@@ -16,13 +17,13 @@ public class ShopScript : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI MotorPower1;
     [SerializeField] TMPro.TextMeshProUGUI BreakingPower1;
     [SerializeField] TMPro.TextMeshProUGUI SteeringDifficulty1;
+    [SerializeField] TMPro.TextMeshProUGUI PurchaseButton;
     public List<Transform> Cars = new List<Transform>();
     int currentCarLook = 0;
     bool isInShop = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -60,7 +61,7 @@ public class ShopScript : MonoBehaviour
             else if (currentCarLook == 0)
             {
                 currentCarLook = Cars.Count - 1;
-                MainCamera.transform.position = MainCamera.transform.position + new Vector3(9.25f * Cars.Count - 1, 0f, 0f);
+                MainCamera.transform.position = MainCamera.transform.position + new Vector3(9.25f * (Cars.Count - 1), 0f, 0f);
                 MainCamera.transform.LookAt(Cars[currentCarLook]);
                 CurrentCarDetails = Cars[currentCarLook].GetComponent<CarController>();
                 SetCarDetails(CurrentCarDetails.name, CurrentCarDetails.price, CurrentCarDetails.maxSpeed, CurrentCarDetails.motorPower, CurrentCarDetails.brakepower, CurrentCarDetails.SteeringDifficulty);
@@ -136,5 +137,27 @@ public class ShopScript : MonoBehaviour
         MotorPower1.text = "Motor Power: " + MotorPower.ToString();
         BreakingPower1.text = "Break Power: " + BreakingPower.ToString();
         SteeringDifficulty1.text = "Steering Difficulty: " + SteeringDifficulty;
+    }
+    public void BuyCar()
+    {
+        CarController CarControllerScript = Cars[currentCarLook].GetComponent<CarController>();
+        if (gameManagerScript.Cash >= CarControllerScript.price && !CarControllerScript.HasTheCarPurchased)
+        {
+            gameManagerScript.Cash -= CarControllerScript.price;
+            CarControllerScript.HasTheCarPurchased = true;
+            PurchaseButton.text = "Purchased";
+        }
+        else if (PurchaseButton.text != "Using" && CarControllerScript.HasTheCarPurchased)
+        {
+            PurchaseButton.text = "Using";
+        }
+        else if (PurchaseButton.text != "Purchased" && CarControllerScript.HasTheCarPurchased)
+        {
+            PurchaseButton.text = "Purchased";
+        }
+        else
+        {
+            PurchaseButton.text = "Purchase";
+        }
     }
 }

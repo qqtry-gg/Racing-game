@@ -385,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarController
   price: 0
   SteeringDifficulty: Medium
+  HasTheCarPurchased: 1
   FRwheel: {fileID: 0}
   FLwheel: {fileID: 0}
   BRwheel: {fileID: 0}
